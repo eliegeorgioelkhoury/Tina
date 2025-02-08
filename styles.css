@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;700&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top, #ff231b, #f0a1a8);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.book {
+  width: 320px;
+  height: 420px;
+  position: relative;
+  perspective: 1200px;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 1s, width 1s;
+  padding: 25px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  position: relative;
+}
+
+.cover {
+  background: linear-gradient(to right, #ff0800, #f0a1a8);
+  color: white;
+  transform-origin: right;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.cover img {
+  width: 140px;
+  margin-top: 15px;
+}
+
+.inside {
+  background: white;
+  color: #d9534f;
+  display: none;
+  width: 50%;
+  height: 100%;
+}
+
+.inside-cover {
+  background: linear-gradient(to right, #ff0800, #f0a1a8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.inside-cover img {
+  width: 200px;
+}
+
+.book.open {
+  width: 650px;
+}
+
+.book.closed {
+  width: 320px;
+}
+
+.flipped {
+  transform: rotateY(-180deg);
+}
+
+.show {
+  display: flex !important;
+  justify-content: space-around;
+}
+
+.inside-text {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+  position: relative;
+}
+
+.btn {
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes {
+  background: linear-gradient(to right, #ff0800, #f0a1a8);
+  color: white;
+  padding: 12px 44px;
+}
+
+.btn-yes:hover {
+  background: linear-gradient(to right, #ff0800, #680911);
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+.btn-no {
+  background: #fff;
+  color: #d9534f;
+  border: 2px solid #d9534f;
+  transition: transform 0.1s ease-out;
+  padding: 12px 14px;
+}
