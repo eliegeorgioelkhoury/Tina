@@ -2,8 +2,6 @@ document.getElementById("cover").addEventListener("click", function () {
   document.getElementById("book").classList.add("open");
   this.classList.add("flipped");
 
-  document.getElementById("romanticMusic").play();
-
   setTimeout(() => {
     document.getElementById("inside").classList.add("show");
     document.getElementById("inside-cover").classList.add("show");
